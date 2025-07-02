@@ -9,3 +9,9 @@ Incluye el desarrollo de un compilador en Java con JFlex y CUP para un lenguaje 
 Se alojan los archivos del analizador léxico, sintáctico, gramática, interfaz gráfica y ejemplos de prueba.
 
 2025
+
+## Integrantes del grupo
+
+- **Bauer Luciano**
+- **Bries Exequiel**
+- **Da Silva Marcos**
