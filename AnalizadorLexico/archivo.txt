@@ -1,0 +1,5 @@
+INI
+INT edad;
+edad=25;
+ARRAY datos;
+FIN

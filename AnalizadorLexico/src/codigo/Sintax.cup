@@ -1,0 +1,46 @@
+
+package codigo;
+
+import java_cup.runtime.Symbol;
+
+parser code
+{:
+    private Symbol s;
+
+    public void syntax_error(Symbol s) {
+        this.s = s;
+    }
+
+    public Symbol getS() {
+        return this.s;
+    }
+:};
+
+/* Terminales = vienen del lexer */
+terminal INI, FIN, REPEAT, CHECK, INTER, PRINT, ELSE, WHILE, FOR,
+    FUNCTION, RETURN, INT, LANG, ARRAY;
+
+terminal Llave_Apertura, Llave_Cierre, Parentesis_A, Parentesis_C,
+    Coma, PuntoYComa, Igual, Menor, Mayor,
+    Igual_Comparacion, Diferente, Menor_Igual, Mayor_Igual,
+    Suma, Resta, Multiplicacion, Division, Modulo,
+    AND, OR, Identificador, Numero, ERROR;
+
+/* No terminales */
+non terminal PROGRAMA, SENTENCIAS, DECLARACION;
+
+/* Inicio del parser */
+start with PROGRAMA;
+
+/* Reglas de producción */
+
+PROGRAMA ::= INI SENTENCIAS FIN
+;
+
+SENTENCIAS ::= DECLARACION PuntoYComa
+             | SENTENCIAS DECLARACION PuntoYComa
+;
+
+DECLARACION ::= INT Identificador
+              | ARRAY Identificador
+;
